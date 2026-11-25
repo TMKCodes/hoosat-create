@@ -5,7 +5,7 @@ import { createInterface } from 'readline';
 import { readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 
-const repository = 'https://github.com/Hoosat-Oy/hoosat-template.git';
+const repository = 'git@github.com:TMKCodes/hoosat-template.git';
 const rl = createInterface({
   input: process.stdin,
   output: process.stdout
