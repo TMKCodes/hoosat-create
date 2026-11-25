@@ -5,7 +5,6 @@ import { createInterface } from 'node:readline/promises';
 import { join } from 'node:path';
 
 const repository = 'https://github.com/TMKCodes/hoosat-template.git';
-const hoosatUIRepository = 'https://github.com/TMKCodes/HoosatUI';
 const minimumNodeMajor = 22;
 
 const rl = createInterface({
@@ -88,9 +87,8 @@ async function run() {
     const keywords = getValueFromArgument('keywords') || (await askQuestion('Enter project keywords (comma-separated): '));
     const keywordList = keywords.split(',').map(k => k.trim()).filter(k => k !== '');
     const gitInit = getYesNoFromArgument('gitInit') ?? (await askYesNoQuestion('Do you want to initialize a git repository? [Y/n] '));
-    let installHoosatUI = false;
-    if (gitInit) {
-      installHoosatUI = getYesNoFromArgument('hoosatui') ?? (await askYesNoQuestion('Do you want to install HoosatUI? [Y/n] '));
+    if (process.argv.includes('--hoosatui')) {
+      console.warn('Warning: --hoosatui is no longer supported, HoosatUI is not part of the stack anymore. The option is ignored.');
     }
     try {
       // Clone git repository.
@@ -126,31 +124,6 @@ async function run() {
           console.error(error.message);
         }
         console.log('Git repository initialized.');
-        if (installHoosatUI) {
-          // Change directory to the client directory
-          process.chdir('src/client');
-          // Clone HoosatUI repository
-          try {
-            await runCommand('git', ['submodule', 'add', hoosatUIRepository], 'Failed to add submodule HoosatUI.', { stdio: 'inherit' });
-            console.log('HoosatUI cloned successfully as submodule in src/client/HoosatUI.');
-          } catch (error) {
-            console.error(error.message);
-          }
-          // Install necessary dev-dependencies
-          try {
-            await runCommand('npm', ['install', '--save-dev', '@testing-library/jest-dom', '@testing-library/react', '@testing-library/dom'], 'Failed to install HoosatUI devDependencies.', { stdio: 'inherit' });
-            console.log('npm HoosatUI devDependencies installed successfully.');
-          } catch (error) {
-            console.error(error.message);
-          }
-          // Install necessary dependencies.
-          try {
-            await runCommand('npm', ['install', 'react-markdown', 'rehype-highlight', 'remark-gfm'], 'Failed to install HoosatUI dependencies.', { stdio: 'inherit' });
-            console.log('npm HoosatUI dependencies installed successfully.');
-          } catch (error) {
-            console.error(error.message);
-          }
-        }
       }
     } catch (err) {
       console.error(`Failed to create project: ${err.message}`);

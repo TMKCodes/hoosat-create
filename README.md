@@ -20,12 +20,11 @@ npx hoosat-create@latest
 - `--keywords`
 - `--keywoordsList`
 - `--gitInit`
-- `--hoosatui` 
 
 For example: 
 
 ```
-npx hoosat-create@latest --destination "new_project" --author "Toni Lukkaroinen" --gitInit Y --hoosatui Y
+npx hoosat-create@latest --destination "new_project" --author "Toni Lukkaroinen" --gitInit Y
 ```
 
 Now it will ask the rest like `license` in the process. Which you can default just by pressing enter.
@@ -55,7 +54,6 @@ npx hoosat-create@latest submodule --destination "src/client/submodule"
 - Configured with Webpack for production builds.
 - Includes Jest for unit testing.
 - Includes example components and routes for getting started.
-- Includes HoosatUI as optional dependancy as git submodule.
 
 ## Scripts
 
@@ -126,6 +124,10 @@ I just dropped some dependancies from the repository and this will keep happenin
 Though for now the only goal seems to be to drop `react-helmet-async`. 
 
 ## Release changes
+
+### 1.5.0 -> 1.5.1
+- Remove HoosatUI from the stack. The CLI no longer asks to install it, and `--hoosatui` is ignored with a warning.
+- Template: drop the unused `react-markdown`, `rehype-highlight` and `remark-gfm` dependencies and the HoosatUI special case in the CSS build.
 
 ### 1.4.7 -> 1.5.0
 - Requires Node.js 22 or newer (Node.js 20 is end-of-life), template is tested on Node.js 22, 24 and 26.
