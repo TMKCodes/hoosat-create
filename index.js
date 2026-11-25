@@ -5,7 +5,7 @@ import { createInterface } from 'node:readline/promises';
 import { join } from 'node:path';
 
 const repository = 'https://github.com/TMKCodes/hoosat-template.git';
-const hoosatUIRepository = 'https://github.com/hoosat-oy/HoosatUI';
+const hoosatUIRepository = 'https://github.com/TMKCodes/HoosatUI';
 const minimumNodeMajor = 22;
 
 const rl = createInterface({

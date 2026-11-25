@@ -7,11 +7,11 @@
   "author": "Toni Lukkaroinen @ Hoosat Oy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Hoosat-Oy/hoosat-create/issues"
+    "url": "https://github.com/TMKCodes/hoosat-create/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hoosat-Oy/hoosat-create.git"
+    "url": "git+https://github.com/TMKCodes/hoosat-create.git"
   },
   "engines": {
     "node": ">=22"

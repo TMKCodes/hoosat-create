@@ -1,6 +1,6 @@
 # Hoosat Create
 
-Hoosat create is a `npx` script that creates React 19 full-stack server side rendering ESM project for you, where you can use Typescript to build web applications. It uses [@TMCKodes/hoosat-template](https://github.com/Hoosat-Oy/hoosat-template) to build React project with SSR and Typescript. 
+Hoosat create is a `npx` script that creates React 19 full-stack server side rendering ESM project for you, where you can use Typescript to build web applications. It uses [@TMCKodes/hoosat-template](https://github.com/TMKCodes/hoosat-template) to build React project with SSR and Typescript. 
 
 ## Requirements
 
