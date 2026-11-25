@@ -1,6 +1,6 @@
 ISC License
 
-Copyright 2023 Hoosat Oy
+Copyright 2023 TMKCodes
 
 Permission to use, copy, modify, and/or distribute this software 
 for any purpose with or without fee is hereby granted, provided 
