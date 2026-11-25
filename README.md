@@ -1,6 +1,10 @@
 # Hoosat Create
 
-Hoosat create is a `npx` script that creates React 18.2 full-stack server side rendering ESM project for you, where you can use Typescript to build web applications. It uses [@Hoosat-Oy/hoosat-template](https://github.com/Hoosat-Oy/hoosat-template) to build React project with SSR and Typescript. 
+Hoosat create is a `npx` script that creates React 19 full-stack server side rendering ESM project for you, where you can use Typescript to build web applications. It uses [@Hoosat-Oy/hoosat-template](https://github.com/Hoosat-Oy/hoosat-template) to build React project with SSR and Typescript. 
+
+## Requirements
+
+Node.js 22, 24 or 26 (any supported LTS line). Node.js 20 and older are end-of-life and not supported. Git is needed for cloning the template.
 
 ## Command to run
 
@@ -35,11 +39,13 @@ npx hoosat-create@latest submodule --destination "src/client/submodule"
 
 ## Technologies Used
 
-- React-helmet-async 1.3
-- React 18.2
-- TypeScript 4.9.2
+- React 19
+- React Router 8
+- React-helmet-async 3
+- i18next 27 / react-i18next 18
+- TypeScript 6
 - Webpack 5
-- Jest 27
+- Jest 30
 
 ## Features
 
@@ -120,6 +126,15 @@ I just dropped some dependancies from the repository and this will keep happenin
 Though for now the only goal seems to be to drop `react-helmet-async`. 
 
 ## Release changes
+
+### 1.4.7 -> 1.5.0
+- Requires Node.js 22 or newer (Node.js 20 is end-of-life), template is tested on Node.js 22, 24 and 26.
+- Clone the template and its submodule over HTTPS, so no GitHub SSH key is needed.
+- Run git and npm without a shell and with argument lists, so project names can not be interpreted as shell commands.
+- Fix `--gitInit n` and `--hoosatui n` being treated as yes.
+- Stop when cloning the template fails instead of continuing in the wrong directory.
+- Fix `submodule` command on Windows and with git 2.38.1+.
+- Template: React 19, React Router 8, TypeScript 6, Jest 30, i18next 27, security fixes in server core and all dependency vulnerabilities resolved.
 
 ### 1.4.5 -> 1.4.6
 - Use submodule for server, make cloning of template recursive.
